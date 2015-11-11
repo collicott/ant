@@ -1,0 +1,38 @@
+var structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup =
+[
+    [ "detectortype", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a6b07f93df3f329505998ad25184d891b", [
+      [ "All", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a6b07f93df3f329505998ad25184d891bab1c94ca2fbc3e78fc30069c8d0f01680", null ],
+      [ "CB", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a6b07f93df3f329505998ad25184d891ba834cb54b61bbed9d4296c995e4c5d8b2", null ],
+      [ "TAPS", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a6b07f93df3f329505998ad25184d891bad6600156d45ca6e0bd2c69f83f5731d9", null ]
+    ] ],
+    [ "histgroup", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a1343549bd046d28ca0f0c9740ea594e4", null ],
+    [ "histgroup", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a5f37836cb4a4d973349f173a3f6a75cc", null ],
+    [ "Fill", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a71a84c2a2ed79c58554987ac85e55673", null ],
+    [ "Finish", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ae04be907a54140d085648754c06cbf8c", null ],
+    [ "makePosMap", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ae7481156a000a985fa4fc26e9d37e0e8", null ],
+    [ "operator=", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#acd4491fc899c0d975e0a81afeadd3b90", null ],
+    [ "ShowResult", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ad47fcdf7b8d24d8f788e28fe41b24d15", null ],
+    [ "anglediff", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a8382e0c4a44630ec1305c5c7f69899a3", null ],
+    [ "cluserSize", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a5567d417284c694270da8109f8875895", null ],
+    [ "cluserSize_true", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ac01217e3563cfa28cd8ec5c8a52d503e", null ],
+    [ "dEE", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a21323d1044bc2559697a169237093b8f", null ],
+    [ "dEE_true", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#adcbd2419ef9041ac50a1447a9a5c222a", null ],
+    [ "energy_recov", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a4b143f2e57de762af72ab1c5dc4143fa", null ],
+    [ "energyinout", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a50faac9622fdf864aa86ca47cc4f99db", null ],
+    [ "input_positions", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#af83657a3f2eaec2b0ea55d433de77265", null ],
+    [ "mult1_chargedPos", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#abfdff2e36293452d2476764360861fad", null ],
+    [ "mult1_positions", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a796bd79c078d749dad4e4313723f2017", null ],
+    [ "mult2_split_angles", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ac56ea7e02fd84bd6f0a8733af4bc6a5e", null ],
+    [ "nCharged", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a551bb73ff67a4d487515f771c5aaa623", null ],
+    [ "nPerEvent", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a815ce37a05265a62f29a9ed94849b7be", null ],
+    [ "nPerEventPerE", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#af2c6be9729430074a9f7aa84f5f691c1", null ],
+    [ "phiinout", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a8c84a250df96fd9712873b2e3e92f4d8", null ],
+    [ "posCharged", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a36310e59a7706c8f89f4a6563dc1850e", null ],
+    [ "Prefix", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a10fe4213ea8e5ead9d86f206db2360fe", null ],
+    [ "splitFlagPos", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a2978f67d92bb1a68d25e866a26f3f00a", null ],
+    [ "splitPerEvent", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a770dec63762a85185d136eefa2ae7c16", null ],
+    [ "splitPos", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a7667e2dcf7c9565af28f4094696efa07", null ],
+    [ "thetainout", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a470bec5ed741b1b3ebfc7641ab6559ce", null ],
+    [ "unmatched_veto", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#ab5780a9a161c4c06f8e7cdf27459a5f5", null ],
+    [ "veto_cand_phi_diff", "structant_1_1analysis_1_1physics_1_1_reconstruct_check_1_1histgroup.html#a096aaf7e2a10da071eeb1288bf9693e0", null ]
+];
