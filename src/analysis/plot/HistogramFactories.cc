@@ -111,12 +111,14 @@ void HistogramFactory::SetDirDescription(const string &desc)
     my_directory->SetTitle(desc.c_str());
 }
 
-TH1D *HistogramFactory::makeTH1D(const string &title, const string &xlabel, const string &ylabel, const BinSettings &bins, const string &name) const
+TH1D *HistogramFactory::makeTH1D(const string &title, const string &xlabel, const string &ylabel, const BinSettings &bins, const string &name, bool sumw2) const
 {
     auto r = make<TH1D>(GetNextHistName(name).c_str(), MakeTitle(title).c_str(),
                         bins.Bins(), bins.Start(), bins.Stop());
     r->SetXTitle(xlabel.c_str());
     r->SetYTitle(ylabel.c_str());
+
+    if(sumw2) r->Sumw2();
     return r;
 }
 
@@ -128,13 +130,16 @@ TH2D *HistogramFactory::makeTH2D(const string &title,
                                  const string &ylabel,
                                  const BinSettings &xbins,
                                  const BinSettings &ybins,
-                                 const string &name) const
+                                 const string &name,
+                                 bool  sumw2) const
 {
     auto h = make<TH2D>(GetNextHistName(name).c_str(), MakeTitle(title).c_str(),
                          xbins.Bins(), xbins.Start(), xbins.Stop(),
                          ybins.Bins(), ybins.Start(), ybins.Stop());
     h->SetXTitle(xlabel.c_str());
     h->SetYTitle(ylabel.c_str());
+
+    if(sumw2) h->Sumw2();
     return h;
 }
 
@@ -145,7 +150,8 @@ TH3D *HistogramFactory::makeTH3D(const string &title,
                                  const BinSettings &xbins,
                                  const BinSettings &ybins,
                                  const BinSettings &zbins,
-                                 const string &name) const
+                                 const string &name,
+                                 bool  sumw2) const
 {
     auto h = make<TH3D>(GetNextHistName(name).c_str(), MakeTitle(title).c_str(),
                        xbins.Bins(), xbins.Start(), xbins.Stop(),
@@ -154,6 +160,8 @@ TH3D *HistogramFactory::makeTH3D(const string &title,
     h->SetXTitle(xlabel.c_str());
     h->SetYTitle(ylabel.c_str());
     h->SetZTitle(zlabel.c_str());
+
+    if(sumw2) h->Sumw2();
     return h;
 }
 

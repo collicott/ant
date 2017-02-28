@@ -64,7 +64,8 @@ public:
             const std::string& xlabel,
             const std::string& ylabel,
             const BinSettings& bins,
-            const std::string& name="") const;
+            const std::string& name="",
+            bool  sumw2 = false) const;
 
     TH2D* makeTH2D(
             const std::string& title,
@@ -72,7 +73,8 @@ public:
             const std::string& ylabel,
             const BinSettings& xbins,
             const BinSettings& ybins,
-            const std::string& name="") const;
+            const std::string& name="",
+            bool  sumw2 = false) const;
 
     TH3D* makeTH3D(const std::string& title,
             const std::string& xlabel,
@@ -81,7 +83,8 @@ public:
             const BinSettings& xbins,
             const BinSettings& ybins,
             const BinSettings& zbins,
-            const std::string& name="") const;
+            const std::string& name="",
+            bool  sumw2 = false) const;
 
     TGraph* makeGraph(
             const std::string& title,
