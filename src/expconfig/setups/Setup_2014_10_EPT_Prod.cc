@@ -21,6 +21,10 @@ public:
         CB->SetElementFlag(Detector_t::ElementFlag_t::Broken, {17,125,189,265,267,456,547,549,557,565,582,586,597,602,672,677,678,696});
         TAPS->SetElementFlag(Detector_t::ElementFlag_t::Broken, {1,76, 128,149,347,353});
         TAPSVeto->SetElementFlag(Detector_t::ElementFlag_t::Broken, {6,64,128,192,256,263,287,321,337,349});
+
+        AddPromptRange({-2.5, 2.5});
+        AddRandomRange({ -50,  -5});
+        AddRandomRange({  5,   50});
     }
 
 
