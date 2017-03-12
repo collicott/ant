@@ -25,8 +25,6 @@ using namespace ant;
 using namespace ant::analysis;
 using namespace ant::analysis::physics;
 
-//ppi0_2gamma::Yield_t::Yield_t() {}
-
 scratch_collicott_ppi0_2gamma::scratch_collicott_ppi0_2gamma(const std::string& name, OptionsPtr opts):
     Physics(name, opts),
     cross_section(HistFac,opts),
@@ -41,25 +39,22 @@ void scratch_collicott_ppi0_2gamma::ProcessEvent(const TEvent& event, manager_t&
 {
     // Check the decay string for MC
     // ******************************
-    bool signal  = false;
     string decay;
-    if(event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC))
-            decay = utils::ParticleTools::GetDecayString(event.MCTrue().ParticleTree);
-    else    decay = "data" + ExpConfig::Setup::GetLastFound()->GetName();
+    bool signal  = false;
+    bool isMC    = event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC);
+
+    if(isMC) decay = utils::ParticleTools::GetDecayString(event.MCTrue().ParticleTree);
+    else     decay = "data" + ExpConfig::Setup::GetLastFound()->GetName();
     if(decay == "(#gamma p) #rightarrow #pi^{0} [ #gamma #gamma ] p ") signal = true;
 
-
     steps.AddStep(signal, "All events");
-
     cross_section.SetEventType(event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC), decay);
-
-    if(event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC))
-    detection_efficiency.SetEventType(signal,decay);
+    if(isMC) detection_efficiency.SetEventType(signal,decay);
 
 
     // If MC, track detection efficiency
     // *************************************
-    if((event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC)) && (signal)){
+    if(isMC && signal){
 
         auto pi0 = utils::ParticleTools::FindParticle(ParticleTypeDatabase::Pi0,event.MCTrue().ParticleTree);
         if(!pi0) LOG(ERROR) << "Did not find pi0 in MC True ... strange!!!";
@@ -139,9 +134,9 @@ void scratch_collicott_ppi0_2gamma::ProcessEvent(const TEvent& event, manager_t&
 
         // ===================================================================
 
-        promptrandom.SetTaggerHit(tc.Time);
+        promptrandom.SetTaggerHit(tc.Time - Meson_time);
 
-        detection_efficiency.AcceptEvent(Meson,Meson_time, tc,promptrandom);
+        if(isMC) detection_efficiency.AcceptEvent(Meson,Meson_time, tc,promptrandom);
         cross_section.AcceptEvent(Meson,Meson_time,tc,promptrandom);
 
         i++;
@@ -163,5 +158,15 @@ void scratch_collicott_ppi0_2gamma::ShowResult()
             << TTree_drawable(steps.Tree, "isSignal","promptrandom","signalcount","0 = bkg, 1 = sig","",BinSettings(2))
             << endc; // actually draws the canvas
 }
+
+//void scratch_collicott_ppi0_2gamma::Post_plot(const WrapTFileInput& input)
+//{
+//    TTree* t = nullptr;
+//    if(!input.GetObject("ProtonPi0/t",t)) {
+//        LOG(ERROR) << "Cannot find tree in input file";
+//    }
+//}
+
+
 
 AUTO_REGISTER_PHYSICS(scratch_collicott_ppi0_2gamma)

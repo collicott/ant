@@ -1,8 +1,9 @@
 #pragma once
 
-#include "physics/Physics.h"
+#include "analysis/physics/Physics.h"
 #include <map>
 #include "base/WrapTTree.h"
+//#include "base/WrapTFile.h"
 #include "cross_section.h"
 #include "det_eff.h"
 
@@ -50,6 +51,8 @@ public:
     virtual void ProcessEvent(const TEvent& event, manager_t& manager) override;
     virtual void Finish() override;
     virtual void ShowResult() override;
+
+//    virtual void Post_plot(const WrapTFileInput& input);
 
 };
 
