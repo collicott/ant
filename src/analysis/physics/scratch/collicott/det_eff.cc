@@ -37,8 +37,9 @@ scratch_collicott_DetEff::scratch_collicott_DetEff(const HistogramFactory& histF
     contamination.CreateBranches(HistFac.makeTTree("Background"));
 }
 
-void scratch_collicott_DetEff::SetEventType(bool isSignal, const std::string decay)
+void scratch_collicott_DetEff::SetEventType(bool isMC, bool isSignal, const std::string decay)
 {
+    stats.isMC = isMC;
     stats.isSignal = isSignal;
     stats.decay = decay;
     stats.Tree->Fill();
@@ -61,6 +62,7 @@ void scratch_collicott_DetEff::AcceptBkgEvent(const LorentzVec& sp, const double
 
 void scratch_collicott_DetEff::FillDetEff(DetEff_t& t, const LorentzVec& sp, const double& sp_time, const TTaggerHit& tc, const PromptRandom::Switch &promptrandom)
 {
+    t.isMC     = stats.isMC;
     t.reaction = stats.decay;
 
     t.sp_theta = sp.Theta()*radtodeg;

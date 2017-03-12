@@ -49,7 +49,7 @@ void scratch_collicott_ppi0_2gamma::ProcessEvent(const TEvent& event, manager_t&
 
     steps.AddStep(signal, "All events");
     cross_section.SetEventType(event.Reconstructed().ID.isSet(ant::TID::Flags_t::MC), decay);
-    if(isMC) detection_efficiency.SetEventType(signal,decay);
+    if(isMC) detection_efficiency.SetEventType(isMC, signal,decay);
 
 
     // If MC, track detection efficiency

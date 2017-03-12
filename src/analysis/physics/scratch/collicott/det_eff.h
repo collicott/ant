@@ -52,6 +52,7 @@ public:
         Stats_t();
 
         // SP kinematics
+        ADD_BRANCH_T(bool, isMC)
         ADD_BRANCH_T(bool, isSignal)
         ADD_BRANCH_T(std::string, decay)
 
@@ -60,6 +61,7 @@ public:
     struct DetEff_t : WrapTTree {
         DetEff_t();
 
+        ADD_BRANCH_T(bool, isMC)
         ADD_BRANCH_T(std::string, reaction)
 
         // SP kinematics
@@ -91,7 +93,7 @@ public:
     scratch_collicott_DetEff(const HistogramFactory &histFac, OptionsPtr opts);
     virtual ~scratch_collicott_DetEff() {}
 
-    void SetEventType(bool isSignal, const std::string decay);
+    void SetEventType(bool isMC, bool isSignal, const std::string decay);
 
     void TrackSignalEvent(const LorentzVec& sp, const double& sp_time, const TTaggerHit& tc, const PromptRandom::Switch &promptrandom);
     void AcceptEvent(const LorentzVec& sp, const double& sp_time, const TTaggerHit& tc, const PromptRandom::Switch &promptrandom)
