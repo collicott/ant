@@ -8,6 +8,12 @@ macro(add_ant_executable name)
   target_link_libraries(${name} analysis base calibration unpacker reconstruct pluto)
 endmacro()
 
+macro(add_ant_scratch_executable user name)
+  set(EXEFILE "scratch/${user}/${name}.cc")
+  add_executable(${name} ${EXEFILE} ${ARGN})
+  target_link_libraries(${name} analysis base calibration unpacker reconstruct pluto)
+endmacro()
+
 add_ant_executable(Ant)
 add_ant_executable(Ant-pluto detail/McAction.h)
 add_ant_executable(Ant-mcgun detail/McAction.h)
@@ -81,7 +87,14 @@ if(AntProgs_Dalitz)
     add_ant_executable(EtapDalitz_plot)
 endif()
 
+option(AntProgs_ProtonPi0 "Build Proton-pi0 analysis tool" OFF)
+
 if(AntProgs_ProtonPi0)
     add_ant_executable(ProtonPi0_plot)
 endif()
 
+option(AntProgs_CrossSection "Build cross section analysis tools" OFF)
+
+if(AntProgs_CrossSection)
+    add_ant_scratch_executable(collicott CrossSection_plot)
+endif()
