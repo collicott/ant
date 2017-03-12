@@ -1,6 +1,6 @@
 #pragma once
 
-#include "physics/Physics.h"
+#include "analysis/physics/Physics.h"
 #include <map>
 #include "base/WrapTTree.h"
 #include "analysis/plot/HistogramFactory.h"

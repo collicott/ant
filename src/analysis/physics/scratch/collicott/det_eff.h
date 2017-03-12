@@ -1,6 +1,6 @@
 #pragma once
 
-#include "physics/Physics.h"
+#include "analysis/physics/Physics.h"
 #include <map>
 #include "base/WrapTTree.h"
 #include "analysis/plot/HistogramFactory.h"
@@ -46,7 +46,7 @@ namespace utils {
  *
  */
 class scratch_collicott_DetEff {
-protected:
+public:
 
     struct Stats_t : WrapTTree {
         Stats_t();
@@ -74,6 +74,7 @@ protected:
         ADD_BRANCH_T(double, tc_promptrandom)
     };
 
+protected:
     HistogramFactory HistFac;
     static constexpr auto radtodeg = std_ext::radian_to_degree(1.0);
 
